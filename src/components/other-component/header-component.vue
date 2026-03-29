@@ -28,7 +28,6 @@ import { onMounted, ref, type Ref } from "vue";
         screen_view.value.actual_position = screen_view.value.available_width < 767 ? 0 : screen_view.value.available_width <= 986 ? 1 : 2
         const available_element = parent_of_element_to_scroll.value as unknown as HTMLElement
         if(available_element) {
-
             available_element.querySelector(".container-for-left-btn-to-left-scroll")?.addEventListener("click",function () {
                 if(screen_view.value.actual_position > 0) {
                     screen_view.value.actual_position -= 1
@@ -53,8 +52,8 @@ import { onMounted, ref, type Ref } from "vue";
             });
         }
     })
-    const text = "Une collaboration exemplaire. L'intervenant a su comprendre nos enjeux métier très rapidement et a livré une solution parfaitement fonctionnelle qui a radicalement changé notre manière de travailler. Professionnalisme et rigueur étaient au rendez-vous."
-    const exp = "Jenny"
+    
+// prochaine modification  :  l'encapsulation de ces taches répétitives dans une fonctions et la création d'un remove eventlistner dans le code
     const reference_bi_directional = defineModel<Boolean>()
     const list_of_services = defineProps<{list_of_automation : ServiceType[],list_of_dev : ServiceType[]}>()
 </script>
